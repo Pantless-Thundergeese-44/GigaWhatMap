@@ -81,13 +81,13 @@ module.exports = {
   //configure the webpack development environment server '
   devServer: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/': 'http://localhost:3000',
     },
     static: {
       publicPath: '/',
       directory: path.join(__dirname, 'dist'),
     },
     // compress: true,
-    port: 8081,
+    port: 8080,
   },
 };

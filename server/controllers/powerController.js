@@ -7,31 +7,6 @@ const powerController = {};
 const STATES_QUERY =
   'SELECT DISTINCT power_plants."State" FROM power_plants ORDER BY power_plants."State" ASC;';
 
-//this method queries the DB and returns an array of all available states in an array to display in front end drop down.
-powerController.getStates = async (req, res, next) => {
-  try {
-    //fetch a list of distinct states from our database
-    const statesList = await db.query(STATES_QUERY);
-    //convert to array
-    const rows = statesList.rows;
-    const result = [];
-    //iterate through the array of objects and push each State value to the "result" array
-    rows.forEach((el) => {
-      result.push(el.State);
-    });
-    res.locals.states = result;
-    //pass "states" data on
-    return next();
-  } catch {
-    // Error Handler -- specific error message
-    return next({
-      log: "Express error handler caught an error in getStates middleware",
-      status: 500,
-      message: { err: "An error occured loading the application" },
-    });
-  }
-};
-
 //This middleware takes the url query, a state name, and returns decimal percentage of Renewable Energy Generation vs Non-Renewable Energy Generation
 powerController.loadState = async (req, res, next) => {
   //pull state string from query on request

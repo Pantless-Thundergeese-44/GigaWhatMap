@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapContainer, Polygon } from 'react-leaflet';
-import { statesData } from '../state.js';
+import { statesData } from '../assets/stateMapCoordinates.js';
 import { useDispatch } from 'react-redux';
 import {
   fetchDataRequest,
@@ -18,7 +18,7 @@ const StateContainer = () => {
   const fetchData = (state) => {
     dispatch(fetchDataRequest());
     axios
-      .post(`/api/states/data?state=` + state)
+      .post(`/data?state=` + state)
       .then((response) => {
         const data = response.data;
         dispatch(fetchDataSuccess(data));
