@@ -33,7 +33,11 @@ const StateContainer = () => {
     <MapContainer
       center={center}
       zoom={4}
-      style={{ width: '70%', height: '50vh', borderRadius: '1em' }}
+      style={{
+        width: '70%',
+        height: '50vh',
+        borderRadius: '1em',
+      }}
     >
       {statesData.features.map((state) => {
         const coordinates = state.geometry.coordinates[0].map((item) => [
