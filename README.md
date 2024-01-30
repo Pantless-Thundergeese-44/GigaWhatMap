@@ -6,7 +6,7 @@ A tool for viewing and comparing data on Renewable and Non-Renewable energy usag
   <img alt="Demo Image #2" src="./client/assets/demo.png">
 </div>
 
-##Usage
+## Usage
 
 Simply hover over a state on the map section of the page and the statistics of that state's energy usage will be displayed to the right. The stats show the amount of renewal vs non-renewal energy and the percentage amount of each different methods of renewable energy generation used that make up the total.
 
